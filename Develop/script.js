@@ -21,3 +21,27 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
+
+//Beginnings of API request
+const apiUrl = "path/to/dayjs/dayjs.min.js";
+dateOutput;
+
+fetch(apiUrl)
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(data => {
+  //.textContent = JSON.stringify()
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
+
+//To start:
+//finish API request, get it to display at top of page
+//
