@@ -1,7 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+//$(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -20,28 +20,39 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
-
+//});
 
 //Beginnings of API request
 const apiUrl = "path/to/dayjs/dayjs.min.js";
-dateOutput;
+//dateOutput;
+let currentDay = document.getElementById('currentDay');
 
-fetch(apiUrl)
-.then(response => {
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return response.json();
-})
-.then(data => {
+currentDay = dayjs().format('MMM D, YYYY');
+$('#currentDay').text(currentDay);
+
+//function test() {
+//fetch('https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js')
+//.then(response => {
+//  if (!response.ok) {
+//    throw new Error('Something went wrong with network response');
+//  }
+//  return response.json();
+//})
+//.then(data => {
   //.textContent = JSON.stringify()
-})
-.catch(error => {
-  console.error('Error:', error);
-});
+//  console.log(data);
+//})
+// .catch(error => {
+//   console.error('Error', error);
+// });
+//}
+// test();
+//Ok. so the above needs to be more specific. Right now it's calling all of the API I think.
 
 
+// .catch(error => {
+//   console.error('Error:', error);
+// });
 //To start:
 //finish API request, get it to display at top of page
-//
+//$('#myElement').addClass('active'); remember you can use jQuery now to select & change the class
