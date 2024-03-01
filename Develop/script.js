@@ -33,30 +33,18 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-  //Could I just name all HTML ids as nums, have checkHours read the value?
 
-  //plannerHour();
-  // let hourNine = [document.getElementById('hour-9'), 9];
-  // let hourTen = document.getElementById('hour-10');
-  // let hourEleven = document.getElementById('hour-11');
-  // let hourTwelve = document.getElementById('hour-12');
-  // let hourThirteen = document.getElementById('hour-13');
-  // let hourFourteen = document.getElementById('hour-14');
-  // let hourFifteen = document.getElementById('hour-15');
-  // let hourSixteen = document.getElementById('hour-16');
-  // let hourSeventeen = document.getElementById('hour-17');
+  $('.btn').on('click', function () {
+    //save to local storage
+    var key = $(this).parent().attr('id');
+    var value = $(this).siblings('textarea').val()
+    localStorage.setItem(key, value)
+  })
 
-  // plannerHour = [
-  //   hourNine = 9,
-  //   hourTen = 10,
-  //   hourEleven = 11,
-  //   hourTwelve = 12,
-  //   hourThirteen = 13,
-  //   hourFourteen = 14,
-  //   hourFifteen = 15,
-  //   hourSixteen = 16,
-  //   hourSeventeen = 17
-  // ]
+  for (let i = 9; i < 18; i++) {
+    $('#hour-' + i + ' textarea').val(localStorage.getItem('hour-' + i))
+  }
+
 
 
   function checkHour() {
@@ -71,7 +59,7 @@ $(function () {
         //add past to classlist 
         $(timeBlock).addClass('past');
       }
-      else if(currentHour == hour) {
+      else if (currentHour == hour) {
         $(timeBlock).addClass('present');
       }
       else {
@@ -79,7 +67,7 @@ $(function () {
       }
     }
   }
-  
+
   checkHour();
 
   // TODO: Add code to get any user input that was saved in localStorage and set
