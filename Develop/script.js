@@ -60,20 +60,26 @@ $(function () {
 
 
   function checkHour() {
-    currentHour = dayjs().hour();
-    if (currentHour > plannerHour[index.value]) {
-      $('#hour-12').addClass('past');
-    }
-    if (currentHour < plannerHour[index.value]) {
-      $('#hour-12').addClass('future');
-    }
-    if (currentHour == plannerHour[index.value]) {
-      $('#hour-12').addClass('present');
+    const currentHour = dayjs().hour();
+    //const currentHour = 14;
+    const timeBlockEls = $('.time-block');
+    //console.log(timeBlockEls);
+    for (const timeBlock of timeBlockEls) {
+      const hour = $(timeBlock).attr('id').split('-')[1];
+      //compare currentHour with hour
+      if (currentHour > hour) {
+        //add past to classlist 
+        $(timeBlock).addClass('past');
+      }
+      else if(currentHour == hour) {
+        $(timeBlock).addClass('present');
+      }
+      else {
+        $(timeBlock).addClass('future');
+      }
     }
   }
-
-
-
+  
   checkHour();
 
   // TODO: Add code to get any user input that was saved in localStorage and set
