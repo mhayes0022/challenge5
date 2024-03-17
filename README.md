@@ -7,8 +7,10 @@ This is a daily scheduling application/planner.
 At the top of the page, the current date is displayed. Below that, are (what are supposed to be) standard daily working hours (of course, they aren't anymore. The days of Dolly Parton's 9 to 5 are long gone). These rows are updated to reflect current time, so that when the hour has passed, the associated row turns grey. Rows with hours in the future are green, and the current hour is highlighted as red. Each row allows you to enter text; you can type reminders here, events you have scheduled, etc. All the way to the right on each row is a save button. When you hit the save button on the corresponding row, it saves the text you've entered to local data. 
 
 ## Website Link
+https://mhayes0022.github.io/challenge5/
 
 ## Website Screenshot
+![Work Day Scheduler ](https://github.com/mhayes0022/challenge5/assets/153241703/a7ca6d44-92fd-48c5-90aa-d6c96e5973a6)
 
 ## Credits
 
